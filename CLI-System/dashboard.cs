@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CLI_System
 {
-    public partial class dashboard : Form
+    public partial class Dashboard : Form
     {
-        public dashboard()
+        public Dashboard()
         {
             InitializeComponent();
         }

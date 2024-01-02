@@ -13,7 +13,8 @@ namespace CLI_System
 {
     public partial class LogIn : Form
     {
-      
+        Dashboard dashboard = new Dashboard();
+
         public LogIn()
         {
             InitializeComponent();
@@ -60,10 +61,12 @@ namespace CLI_System
                 if (email == dbemail && password == dbpassword)
                 {
                     MessageBox.Show("Log In Success");
+                    dashboard.Show();
+                    this.Close();
                 }
                 else if(email != dbemail)
                 {
-                    MessageBox.Show("Invalid Email");
+                    MessageBox.Show("You Entered An Invalid Account!");
                 }
                 else if(password != dbpassword)
                 {
@@ -72,7 +75,7 @@ namespace CLI_System
             }
             else
             {
-                MessageBox.Show("Account Don't Match!");
+                MessageBox.Show("You Entered An Invalid Account!");
             }
         }
     }
