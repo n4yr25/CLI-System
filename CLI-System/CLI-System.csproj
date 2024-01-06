@@ -68,6 +68,18 @@
     <Compile Include="LogIn.Designer.cs">
       <DependentUpon>LogIn.cs</DependentUpon>
     </Compile>
+    <Compile Include="LogRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogRecord.Designer.cs">
+      <DependentUpon>LogRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageClass.Designer.cs">
+      <DependentUpon>ManageClass.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Dashboard.resx">
@@ -78,6 +90,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogRecord.resx">
+      <DependentUpon>LogRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageClass.resx">
+      <DependentUpon>ManageClass.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

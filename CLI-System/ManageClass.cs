@@ -11,17 +11,15 @@ using System.Windows.Forms;
 
 namespace CLI_System
 {
-    public partial class Dashboard : Form
+    public partial class ManageClass : Form
     {
-       LogRecord logRecord = new LogRecord();
-        ManageClass manageClass = new ManageClass();
-
-        public Dashboard()
+  
+        public ManageClass()
         {
             InitializeComponent();
         }
 
-        private void Dashboard_Load(object sender, EventArgs e)
+        private void ManageClass_Load(object sender, EventArgs e)
         {
             load();
         }
@@ -31,27 +29,25 @@ namespace CLI_System
             config config = new config();
             config.connect();
 
-            String select = "SELECT laboratory.lab_room AS 'LABORATORY ROOM', class.class_section AS 'BLOCK', timein AS TIMEIN, timeout AS TIMEOUT FROM log_record JOIN instructor ON log_record.ins_id=instructor.ins_id JOIN laboratory ON log_record.lab_id=laboratory.lab_id JOIN class on log_record.class_id=class.class_id\r\n";
+            String select = "SELECT class_section AS SECTION, class_subject AS SUBJECT, class_year AS YEAR FROM class";
             MySqlCommand cmd = new MySqlCommand(select, config.connection);
             MySqlDataAdapter da = new MySqlDataAdapter();
             DataTable dt = new DataTable();
             da.SelectCommand = cmd;
             da.Fill(dt);
 
-            this.history_gridview.DataSource = dt;
+            this.dataGridView1.DataSource = dt;
 
             config.disconnect();
         }
 
-        private void history_gridview_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            logRecord.Show();
-            this.Close();
-        }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
-            manageClass.Show();
+       
         }
+
+        
     }
 }
