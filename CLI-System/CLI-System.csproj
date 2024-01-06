@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddClass.Designer.cs">
+      <DependentUpon>AddClass.cs</DependentUpon>
+    </Compile>
     <Compile Include="config.cs" />
     <Compile Include="Dashboard.cs">
       <SubType>Form</SubType>
@@ -68,12 +74,6 @@
     <Compile Include="LogIn.Designer.cs">
       <DependentUpon>LogIn.cs</DependentUpon>
     </Compile>
-    <Compile Include="LogRecord.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="LogRecord.Designer.cs">
-      <DependentUpon>LogRecord.cs</DependentUpon>
-    </Compile>
     <Compile Include="ManageClass.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +82,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddClass.resx">
+      <DependentUpon>AddClass.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -90,9 +93,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="LogRecord.resx">
-      <DependentUpon>LogRecord.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManageClass.resx">
       <DependentUpon>ManageClass.cs</DependentUpon>

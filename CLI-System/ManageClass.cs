@@ -13,10 +13,12 @@ namespace CLI_System
 {
     public partial class ManageClass : Form
     {
-  
-        public ManageClass()
+        public string ins_id { get; set; }
+
+        public ManageClass(string insid)
         {
             InitializeComponent();
+            ins_id = insid;
         }
 
         private void ManageClass_Load(object sender, EventArgs e)
@@ -41,13 +43,29 @@ namespace CLI_System
             config.disconnect();
         }
 
-
-
         private void button1_Click(object sender, EventArgs e)
         {
-       
+            AddClass addclass = new AddClass(ins_id);
+            if (addclass.IsDisposed == true)
+            {
+                addclass = new AddClass(ins_id);
+            }
+            addclass.Show();
         }
 
-        
+        private void ManageClass_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void showstud_button_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            load();
+        }
     }
 }

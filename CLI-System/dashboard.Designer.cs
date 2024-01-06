@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
+            this.user_label = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.label2 = new System.Windows.Forms.Label();
@@ -79,22 +79,22 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.user_label);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(36, 82);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(623, 150);
             this.panel1.TabIndex = 4;
             // 
-            // label4
+            // user_label
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Tahoma", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(357, 33);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(174, 42);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Ryan King";
+            this.user_label.AutoSize = true;
+            this.user_label.Font = new System.Drawing.Font("Tahoma", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.user_label.Location = new System.Drawing.Point(357, 33);
+            this.user_label.Name = "user_label";
+            this.user_label.Size = new System.Drawing.Size(88, 42);
+            this.user_label.TabIndex = 9;
+            this.user_label.Text = "User";
             // 
             // label3
             // 
@@ -156,14 +156,14 @@
             this.history_gridview.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.history_gridview.ColumnHeadersHeight = 30;
             this.history_gridview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.history_gridview.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.history_gridview.DefaultCellStyle = dataGridViewCellStyle2;
             this.history_gridview.Location = new System.Drawing.Point(36, 380);
             this.history_gridview.Name = "history_gridview";
             this.history_gridview.ReadOnly = true;
@@ -209,7 +209,7 @@
         private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label user_label;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView history_gridview;

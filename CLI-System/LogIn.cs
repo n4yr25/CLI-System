@@ -13,7 +13,6 @@ namespace CLI_System
 {
     public partial class LogIn : Form
     {
-        Dashboard dashboard = new Dashboard();
 
         public LogIn()
         {
@@ -58,9 +57,13 @@ namespace CLI_System
             {
                 string dbemail = dr.GetValue(1).ToString();
                 string dbpassword = dr.GetValue(2).ToString();
+                string instructor = dr.GetValue(0).ToString();
+
                 if (email == dbemail && password == dbpassword)
                 {
-                    MessageBox.Show("Log In Success");
+                    MessageBox.Show($"Log In Success {instructor}");
+                    Dashboard dashboard = new Dashboard(instructor);
+
                     dashboard.Show();
                     this.Close();
                 }
