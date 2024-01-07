@@ -31,7 +31,7 @@ namespace CLI_System
             config config = new config();
             config.connect();
 
-            String select = "SELECT class_section AS SECTION, class_subject AS SUBJECT, class_year AS YEAR FROM class";
+            String select = "SELECT class_id AS 'CLASS ID', class_section AS SECTION, class_subject AS SUBJECT, class_year AS YEAR FROM class";
             MySqlCommand cmd = new MySqlCommand(select, config.connection);
             MySqlDataAdapter da = new MySqlDataAdapter();
             DataTable dt = new DataTable();
@@ -66,6 +66,20 @@ namespace CLI_System
         private void button2_Click(object sender, EventArgs e)
         {
             load();
+        }
+
+        private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            this.dataGridView1.CurrentRow.Selected = true;
+            string classid = this.dataGridView1.Rows[e.RowIndex].Cells["CLASS ID"].Value.ToString();
+
+            ManageStudent manageStudent = new ManageStudent(classid);
+            if (manageStudent.IsDisposed == true)
+            {
+                manageStudent = new ManageStudent(classid);
+            }
+            manageStudent.Show();
+            this.Hide();
         }
     }
 }
