@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -40,6 +40,10 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.history_gridview = new System.Windows.Forms.DataGridView();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.history_gridview)).BeginInit();
@@ -65,6 +69,7 @@
             this.button2.TabIndex = 2;
             this.button2.Text = "Create Log";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label1
             // 
@@ -79,6 +84,9 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.user_label);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(36, 82);
@@ -89,10 +97,10 @@
             // user_label
             // 
             this.user_label.AutoSize = true;
-            this.user_label.Font = new System.Drawing.Font("Tahoma", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.user_label.Location = new System.Drawing.Point(357, 33);
+            this.user_label.Font = new System.Drawing.Font("Tahoma", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.user_label.Location = new System.Drawing.Point(147, 21);
             this.user_label.Name = "user_label";
-            this.user_label.Size = new System.Drawing.Size(88, 42);
+            this.user_label.Size = new System.Drawing.Size(119, 58);
             this.user_label.TabIndex = 9;
             this.user_label.Text = "User";
             // 
@@ -102,9 +110,9 @@
             this.label3.Font = new System.Drawing.Font("Tahoma", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(17, 21);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(353, 58);
+            this.label3.Size = new System.Drawing.Size(145, 58);
             this.label3.TabIndex = 8;
-            this.label3.Text = "Good Morning, ";
+            this.label3.Text = "Hello,";
             // 
             // monthCalendar1
             // 
@@ -140,11 +148,11 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(36, 335);
+            this.label5.Location = new System.Drawing.Point(36, 343);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(99, 29);
+            this.label5.Size = new System.Drawing.Size(129, 29);
             this.label5.TabIndex = 11;
-            this.label5.Text = "History";
+            this.label5.Text = "RECORDS";
             // 
             // history_gridview
             // 
@@ -156,14 +164,14 @@
             this.history_gridview.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.history_gridview.ColumnHeadersHeight = 30;
             this.history_gridview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.history_gridview.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.history_gridview.DefaultCellStyle = dataGridViewCellStyle4;
             this.history_gridview.Location = new System.Drawing.Point(36, 380);
             this.history_gridview.Name = "history_gridview";
             this.history_gridview.ReadOnly = true;
@@ -171,6 +179,48 @@
             this.history_gridview.Size = new System.Drawing.Size(991, 245);
             this.history_gridview.TabIndex = 13;
             this.history_gridview.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.history_gridview_CellContentDoubleClick);
+            this.history_gridview.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.history_gridview_CellMouseDoubleClick);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Tahoma", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(35, 101);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(217, 39);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "WELCOME TO";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Tahoma", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(243, 82);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(299, 58);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "CLI System";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Black;
+            this.label7.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(39, 87);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(211, 14);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "---------------------------------------------------";
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(947, 350);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(80, 24);
+            this.button3.TabIndex = 14;
+            this.button3.Text = "LOAD";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Dashboard
             // 
@@ -178,6 +228,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1084, 681);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.history_gridview);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.panel3);
@@ -213,5 +264,9 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView history_gridview;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button3;
     }
 }

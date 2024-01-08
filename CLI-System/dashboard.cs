@@ -30,7 +30,7 @@ namespace CLI_System
 
             if(dr.Read())
             {
-                this.user_label.Text = dr.GetValue(1).ToString();
+                this.user_label.Text = dr.GetValue(4).ToString();
 
             }
 
@@ -47,7 +47,7 @@ namespace CLI_System
             config config = new config();
             config.connect();
 
-            string select = "SELECT laboratory.lab_room AS 'LABORATORY ROOM', class.class_section AS 'BLOCK', timein AS TIMEIN, timeout AS TIMEOUT FROM log_record JOIN instructor ON log_record.ins_id=instructor.ins_id JOIN laboratory ON log_record.lab_id=laboratory.lab_id JOIN class on log_record.class_id=class.class_id\r\n";
+            string select = $"SELECT log_id, class_section, lab_room, timein, timeout FROM logrecord JOIN instructor ON logrecord.ins_id=instructor.ins_id WHERE instructor.ins_id='{ins_id}' ORDER BY log_id DESC";
             MySqlCommand cmd = new MySqlCommand(select, config.connection);
             MySqlDataAdapter da = new MySqlDataAdapter();
             DataTable dt = new DataTable();
@@ -75,6 +75,33 @@ namespace CLI_System
             }
 
             manageClass.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            CreateMeeting createmeeting = new CreateMeeting(ins_id);
+            if(createmeeting.IsDisposed == true)
+            {
+                createmeeting = new CreateMeeting(ins_id);
+            }
+            createmeeting.Show();
+        }
+
+        private void history_gridview_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            string logid = this.history_gridview.Rows[e.RowIndex].Cells["log_id"].Value.ToString();
+
+            History history = new History(logid);
+            if(history.IsDisposed == true)
+            {
+                history = new History(logid);
+            }
+            history.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            load();
         }
     }
 }

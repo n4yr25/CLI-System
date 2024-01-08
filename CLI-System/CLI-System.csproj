@@ -55,7 +55,19 @@
     <Compile Include="AddClass.Designer.cs">
       <DependentUpon>AddClass.cs</DependentUpon>
     </Compile>
+    <Compile Include="ComputerLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ComputerLog.Designer.cs">
+      <DependentUpon>ComputerLog.cs</DependentUpon>
+    </Compile>
     <Compile Include="config.cs" />
+    <Compile Include="CreateMeeting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateMeeting.Designer.cs">
+      <DependentUpon>CreateMeeting.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +79,12 @@
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="History.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="History.Designer.cs">
+      <DependentUpon>History.cs</DependentUpon>
     </Compile>
     <Compile Include="LogIn.cs">
       <SubType>Form</SubType>
@@ -91,11 +109,20 @@
     <EmbeddedResource Include="AddClass.resx">
       <DependentUpon>AddClass.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ComputerLog.resx">
+      <DependentUpon>ComputerLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateMeeting.resx">
+      <DependentUpon>CreateMeeting.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="History.resx">
+      <DependentUpon>History.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
@@ -114,6 +141,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -127,6 +155,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CLIS-bg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CLIS-logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

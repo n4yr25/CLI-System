@@ -31,7 +31,7 @@ namespace CLI_System
             config config = new config();
             config.connect();
 
-            String select = "SELECT class_id AS 'CLASS ID', class_section AS SECTION, class_subject AS SUBJECT, class_year AS YEAR FROM class";
+            String select = $"SELECT class_id AS 'CLASS ID', class_section AS SECTION, class_subject AS SUBJECT, class_year AS YEAR FROM class WHERE ins_id='{ins_id}'";
             MySqlCommand cmd = new MySqlCommand(select, config.connection);
             MySqlDataAdapter da = new MySqlDataAdapter();
             DataTable dt = new DataTable();
